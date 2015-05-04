@@ -1,0 +1,1 @@
+﻿<%@ ServiceHost Language="C#" Debug="true" Service="Soat.HappyNet.Server.Services.SalesOrder.SalesOrderService" CodeBehind="Soat.HappyNet.Server.Services.SalesOrder.SalesOrderService.cs" %>

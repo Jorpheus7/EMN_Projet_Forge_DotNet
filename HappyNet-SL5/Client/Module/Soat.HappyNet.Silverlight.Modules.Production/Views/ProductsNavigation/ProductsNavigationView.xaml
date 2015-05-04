@@ -1,0 +1,57 @@
+﻿<UserControl x:Class="Soat.HappyNet.Silverlight.Modules.Production.Views.ProductsNavigationView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:windowControls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"             
+    xmlns:common="clr-namespace:System.Windows;assembly=System.Windows.Controls"
+    xmlns:regions="clr-namespace:Microsoft.Practices.Composite.Presentation.Regions;assembly=Microsoft.Practices.Composite.Presentation"
+    xmlns:cal="clr-namespace:Microsoft.Practices.Composite.Presentation.Commands;assembly=Microsoft.Practices.Composite.Presentation"
+    xmlns:toolkit="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Toolkit"
+    xmlns:controls="clr-namespace:Soat.HappyNet.Silverlight.Library.Controls;assembly=Soat.HappyNet.Silverlight.Library"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:behavior="clr-namespace:Soat.HappyNet.Silverlight.Library.Behaviors;assembly=Soat.HappyNet.Silverlight.Library">
+    <UserControl.Resources>
+        <common:HierarchicalDataTemplate x:Key="SubCategoryTemplate">
+            <Grid>
+                <TextBlock Text="{Binding Name}"/>
+            </Grid>
+        </common:HierarchicalDataTemplate>
+
+        <common:HierarchicalDataTemplate x:Key="CategoryTemplate" 
+                                         ItemsSource="{Binding ProductSubcategory}"
+                                         ItemTemplate="{StaticResource SubCategoryTemplate}">
+            <Grid>
+                <TextBlock Text="{Binding Name}"/>
+            </Grid>
+        </common:HierarchicalDataTemplate>
+    </UserControl.Resources>
+    <Grid x:Name="LayoutRoot"
+          Width="200">
+        <toolkit:HeaderedContentControl Header="{Binding Path=Strings.PRODUCTION_Categories, Source={StaticResource LocalizedStrings}}"
+                                        Style="{StaticResource HeaderedContentStyle}">
+            <windowControls:TreeView x:Name="NavigationTreeView"
+                                     ItemsSource="{Binding Categories}"
+                                     Style="{StaticResource TreeViewStyle}" 
+                                     BorderThickness="0" 
+                                     Background="Transparent"
+                                     ItemTemplate="{StaticResource CategoryTemplate}">
+                <i:Interaction.Behaviors>
+                    <behavior:TreeViewSelectionBehavior Command="{Binding CategorySelectionCommand}" />
+                </i:Interaction.Behaviors>
+            </windowControls:TreeView>
+        </toolkit:HeaderedContentControl>
+        
+        <TextBlock Text="Ooops, aucune donnée, (Houston) on dirait qu'on a un problème ... :("
+                   Style="{StaticResource BoldLabelStyle}"
+                   HorizontalAlignment="Center"
+                   VerticalAlignment="Center">
+            <i:Interaction.Behaviors>
+                <behavior:BoolValueVisibilityBehavior
+                    ValueBinding="{Binding IsError}" />
+            </i:Interaction.Behaviors>
+        </TextBlock>
+        
+        <controls:Loading IsLoading="{Binding IsLoading}"
+                          Width="40" Height="40"/>
+    </Grid>
+</UserControl>
+    

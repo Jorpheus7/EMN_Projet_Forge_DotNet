@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Add an anonymous storyboard completed event hanlder (being anonymous allows you to access local variables)</Title>
+      <Shortcut>slsbc</Shortcut>
+      <Author>Robby Ingebretsen</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>storyboard</ID>
+          <ToolTip>The name of the storyboard (this should be a storyboard that already exists)</ToolTip>
+          <Default>MyStoryboard</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[
+// using an anonymous, inline handler for the completed event allows you to use 
+// local variables from within the event handler and keeps our code cleaner
+
+EventHandler handler = null;
+handler = delegate(object s, EventArgs e)
+{
+  // remove the handler 
+  $storyboard$.Completed -= handler;
+  
+  // code to execute when the storyboard is completed goes here
+};
+
+$storyboard$.Completed += handler;
+$storyboard$.Begin();
+        $end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

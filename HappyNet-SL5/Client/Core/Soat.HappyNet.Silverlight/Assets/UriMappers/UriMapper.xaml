@@ -1,0 +1,15 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:uriMapper="clr-namespace:System.Windows.Navigation;assembly=System.Windows.Controls.Navigation">
+    <!--Configuration de la Navigation-->
+    <uriMapper:UriMapper x:Key="uriMapper">
+        <uriMapper:UriMapping Uri="notimplemented" MappedUri="/Soat.HappyNet.Silverlight.Modules.Main;component/ViewPages/NotImplementedPage.xaml"/>
+        <uriMapper:UriMapping Uri="home" MappedUri="/Soat.HappyNet.Silverlight.Modules.Main;component/ViewPages/HomePage.xaml"/>
+        <uriMapper:UriMapping Uri="backoffice" MappedUri="/Soat.HappyNet.Silverlight.Modules.BackOffice;component/ViewPages/OrdersPage.xaml"/>
+        <uriMapper:UriMapping Uri="employees" MappedUri="/Soat.HappyNet.Silverlight.Modules.HumanResources;component/ViewPages/EmployeesPage.xaml"/>
+        <uriMapper:UriMapping Uri="employee" MappedUri="/Soat.HappyNet.Silverlight.Modules.HumanResources;component/ViewPages/EmployeeDetailsPage.xaml"/>
+        <uriMapper:UriMapping Uri="shopping" MappedUri="/Soat.HappyNet.Silverlight.Modules.Production;component/ViewPages/ProductsPage.xaml"/>
+        <uriMapper:UriMapping Uri="shopping/{productid}" MappedUri="/Soat.HappyNet.Silverlight.Modules.Production;component/ViewPages/ProductsPage.xaml?productid={productid}"/>
+        <uriMapper:UriMapping Uri="{}{page}" MappedUri="/Soat.HappyNet.Silverlight.Modules.Main;component/ViewPages/NotImplementedPage.xaml"/>
+    </uriMapper:UriMapper>
+</ResourceDictionary>

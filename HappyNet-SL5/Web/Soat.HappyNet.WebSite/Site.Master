@@ -1,0 +1,94 @@
+﻿<%@ Master Language="C#" AutoEventWireup="true" CodeBehind="Site.master.cs" Inherits="Soat.HappyNet.WebSite.Site" EnableViewState="false" %>
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" >
+<head id="Head1" runat="server">
+    <title>So@t - HappyNet</title>
+    <meta name="description" 
+          content="Application de référence en Silverlight de type e-commerce"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=EmulateIE7" />
+    <link href="Assets/Site.css" rel="Stylesheet" />
+    <script type="text/javascript" src="Splash/SplashScreen.js" />
+    <script type="text/javascript" src="Assets/Silverlight.js"></script>
+    <script type="text/javascript">
+        var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+        document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+    </script>
+    <script type="text/javascript">
+        try {
+            var pageTracker = _gat._getTracker("UA-16282531-2");
+            pageTracker._trackPageview();
+        } catch (err) { 
+        // TODO 
+        }
+    </script>
+    <script type="text/javascript">
+        function trackEvent(category, action, label) {
+            pageTracker._trackEvent(category, action, label);
+        }
+        
+        function onSilverlightError(sender, args) {
+            var appSource = "";
+            if (sender != null && sender != 0) {
+                appSource = sender.getHost().Source;
+            }
+
+            var errorType = args.ErrorType;
+            var iErrorCode = args.ErrorCode;
+
+            if (errorType == "ImageError" || errorType == "MediaError") {
+                return;
+            }
+
+            var errMsg = "Unhandled Error in Silverlight Application " + appSource + "\n";
+
+            errMsg += "Code: " + iErrorCode + "    \n";
+            errMsg += "Category: " + errorType + "       \n";
+            errMsg += "Message: " + args.ErrorMessage + "     \n";
+
+            if (errorType == "ParserError") {
+                errMsg += "File: " + args.xamlFile + "     \n";
+                errMsg += "Line: " + args.lineNumber + "     \n";
+                errMsg += "Position: " + args.charPosition + "     \n";
+            }
+            else if (errorType == "RuntimeError") {
+                if (args.lineNumber != 0) {
+                    errMsg += "Line: " + args.lineNumber + "     \n";
+                    errMsg += "Position: " + args.charPosition + "     \n";
+                }
+                errMsg += "MethodName: " + args.methodName + "     \n";
+            }
+
+            throw new Error(errMsg);
+        }
+    </script>
+</head>
+<body>
+    <form id="form2" runat="server" class="fullsize">
+    <div class="fullsize">
+        <object data="data:application/x-silverlight-2," type="application/x-silverlight-2" width="100%" height="100%">
+          <param name="source" value="ClientBin/Soat.HappyNet.Silverlight.xap"/>
+		  <param name="onError" value="onSilverlightError" />
+		  <param name="background" value="white" />
+		  <param name="minRuntimeVersion" value="3.0.40624.0" />
+		  <param name="autoUpgrade" value="true" />
+		  <param name="SplashScreenSource" value="Splash/SplashScreen.xaml" />
+		  <param name="onSourceDownloadProgressChanged" value="onSourceDownloadProgressChanged" />
+	        <div align="center" style="margin:10,10,10,10">
+                <p><a href="http://www.soat.fr"><img src="Images/logoSoat.png" alt="Silverlight" style="border-style: none" /></a></p>
+                <div id="no-sl" class="install-info">
+                    <p>Le site requiert l'installation (rapide) du plugin <a href="http://go.microsoft.com/fwlink/?LinkId=107362">Microsoft Silverlight</a> (~6Mo)</p>
+                    <p>The website requires the (quick) install of the <a href="http://go.microsoft.com/fwlink/?LinkId=107362">Microsoft Silverlight</a> plugin (~6MB)</p>
+                </div>
+                <a href="http://go.microsoft.com/fwlink/?LinkId=107362" style="text-decoration: none;">
+                    <img src="Images/install-silverlight.png" alt="Télécharger Microsoft Silverlight" style="border: 2px black solid"/>
+                </a>
+            </div>
+            <asp:ContentPlaceHolder ID="SilverlightContent" runat="server" />
+	    </object><iframe id="_sl_historyFrame" style="visibility:hidden;height:0px;width:0px;border:0px"></iframe>
+    </div>
+    </form>
+</body>
+</html>
+

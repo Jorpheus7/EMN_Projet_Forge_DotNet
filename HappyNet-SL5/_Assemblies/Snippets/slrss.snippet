@@ -1,0 +1,122 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Add a very simple RSS feed data source to a project (also includes a simple crossdomain.xml)</Title>
+      <Shortcut>slrss</Shortcut>
+      <Author>Robby Ingebretsen</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal>
+          <ID>url</ID>
+          <ToolTip>The URL for the RSS feed</ToolTip>
+          <Default>http://api.flickr.com/services/feeds/photos_public.gne?format=rss_200&amp;tags=flower</Default>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[
+    #region RSS Data Source
+    
+    /*
+     
+    BEFORE YOU USE THIS:
+    
+    1) Add a Reference to System.Xml.Linq.
+    To do this, right click on References in the Solution explorer and choose
+    "System.Xml.Linq" from the list.
+    
+    2) Add the following to the list of namespaces at the top of your .cs file:
+    using System.Collections.ObjectModel;
+    using System.Net;
+    using System.Xml.Linq;
+    using System.Collections;
+    using System.Linq;
+
+    3) Make sure your URL is cross-domain compatible
+    To enable your application to access data on a server, you need to place 
+    a file called CrossDomain.xml on the server's public root.  Many servers 
+    (like Flickr, Amazon, YouTube, Yahoo, etc.) already have this.  For your
+    own server, you can use this sample:
+    
+    <?xml version="1.0"?>
+    <cross-domain-policy>
+       <allow-access-from domain="*" />
+    </cross-domain-policy>     
+    
+    */    
+    
+    public class RSSDataSource : ObservableCollection<RSSItem>
+    {
+        string URL = "$url$";
+
+        public RSSDataSource()
+        {
+            WebClient rssService = new WebClient();
+            rssService.DownloadStringCompleted += new DownloadStringCompletedEventHandler(DownloadCompleted);
+            rssService.DownloadStringAsync(new Uri(URL));
+        }
+
+        private void DownloadCompleted(object sender, DownloadStringCompletedEventArgs e)
+        {
+            if (e.Error == null)
+            {
+                LoadRSS(e.Result);
+            }
+        }
+
+        private void LoadRSS(string rss)
+        {
+            XElement feed = XElement.Parse(rss);
+
+            if (feed.Element("channel") != null)
+            {
+                IEnumerable items =
+                    from item in feed.Element("channel").Elements("item")
+                    select new RSSItem
+                    {
+                        // standard RSS properties
+                        Title = (string)item.Element("title").Value,
+                        Link = (string)item.Element("link").Value,
+                        Description = (string)item.Element("description").Value,
+                        Date = DateTime.Parse(item.Element("pubDate").Value),
+
+                        // custom properties (be sure to update the RSSItem class too)
+                        // FlickrThumbnail = new BitmapImage(new Uri((string)item.Element("{http://search.yahoo.com/mrss/}thumbnail").Attribute("url"))),
+                    };
+
+                foreach (RSSItem item in items)
+                {
+                    this.Add(item);
+                }
+            }
+        }
+    }
+
+    public class RSSItem
+    {
+        // standard RSS properties
+        public string Title { get; set; }
+        public string Link { get; set; }
+        public string Description { get; set; }
+        public DateTime Date { get; set; }
+
+        // custom properties (be sure to update the LoadRSS method too)
+        // public BitmapImage FlickrThumbnail { get; set; }
+
+        public override string ToString()
+        {
+            return Title;
+        }
+    }
+    
+    #endregion
+    
+        $end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

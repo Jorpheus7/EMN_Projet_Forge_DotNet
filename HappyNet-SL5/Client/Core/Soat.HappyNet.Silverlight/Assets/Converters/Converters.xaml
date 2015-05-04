@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:converter="clr-namespace:Soat.HappyNet.Silverlight.Library.Converters;assembly=Soat.HappyNet.Silverlight.Library">
+    <converter:VisibilityConverter x:Key="VisibilityConverter"/>
+    <converter:NegateConverter x:Key="NegateConverter" />
+    <converter:IsPositiveConverter x:Key="IsPositiveConverter" />
+    <converter:ColorConverter x:Key="ColorConverter" />
+    <converter:FormatConverter x:Key="FormatConverter" />
+    <converter:CurrencyConverter x:Key="CurrencyConverter" />
+    <converter:DateTimeConverter x:Key="DateTimeConverter" />
+</ResourceDictionary>

@@ -1,0 +1,37 @@
+﻿<UserControl x:Class="Soat.HappyNet.Silverlight.Modules.HumanResources.Views.EmployeesSearchView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+    xmlns:windowControls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"             
+    xmlns:controls="clr-namespace:Soat.HappyNet.Silverlight.Library.Controls;assembly=Soat.HappyNet.Silverlight.Library"
+    xmlns:Regions="clr-namespace:Microsoft.Practices.Composite.Presentation.Regions;assembly=Microsoft.Practices.Composite.Presentation"
+    xmlns:cal="clr-namespace:Microsoft.Practices.Composite.Presentation.Commands;assembly=Microsoft.Practices.Composite.Presentation"                
+    xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+    xmlns:dataInput="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data.Input">
+    <Grid x:Name="LayoutRoot">
+        <data:DataGrid x:Name="EmployeesDataGrid" 
+                       Style="{StaticResource DataGridStyle}"
+                       ItemsSource="{Binding EmployeeCollection}" 
+                       AutoGenerateColumns="False" 
+                       IsReadOnly="True">
+            <data:DataGrid.Columns>
+                <data:DataGridTextColumn Header="Civilité" Binding="{Binding Title}" />
+                <data:DataGridTextColumn Header="Nom" Binding="{Binding LastName}"  />
+                <data:DataGridTextColumn Header="Prénom" Binding="{Binding FirstName}" />
+                <data:DataGridTextColumn Header="Titre" Binding="{Binding JobTitle}"  />
+                <data:DataGridTextColumn Header="Téléphone" Binding="{Binding PhoneNumber }" />
+                <data:DataGridTextColumn Header="Adresse Electronique" Binding="{Binding EmailAddress}" />
+                <data:DataGridTextColumn Header="Adresse" Binding="{Binding AddressLine1}" />
+                <data:DataGridTextColumn Header="Complément d'Adresse" Binding="{Binding AddressLine2}"/>
+                <data:DataGridTextColumn Header="Ville" Binding="{Binding City}"  />
+                <data:DataGridTextColumn Header="Etat" Binding="{Binding StateProvinceName}"  />
+                <data:DataGridTextColumn Header="Code Postal" Binding="{Binding PostalCode}" />
+                <data:DataGridTextColumn Header="Région" Binding="{Binding CountryRegionName}"  />
+                <data:DataGridTextColumn Header="Info complémentaires" Binding="{Binding AdditionalContactInfo}" />
+            </data:DataGrid.Columns>
+        </data:DataGrid>
+    
+        <controls:Loading IsLoading="{Binding IsLoading}" />
+    </Grid>
+</UserControl>
+    

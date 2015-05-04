@@ -1,0 +1,88 @@
+﻿html, body {
+     height: 100%;
+     overflow: auto;
+     margin: 0;
+     font-family:Tahoma,Verdana,Arial,sans-serif;
+     font-size:0.95em;
+     color: black;
+     background: #F0F0F0;
+ }
+
+.install-info {
+    font-weight:bold;
+    font-size:12px;
+}
+
+.fullsize 
+{
+    height:100%;
+}
+
+a img
+{
+    border-width: 0px;
+    text-decoration: none;
+}
+
+a 
+{
+    text-decoration: underline;
+    color:#74AE0B;
+}
+
+a:hover
+{
+    color:black;
+    text-decoration: none;
+}
+
+ul
+{
+    margin: 5px;
+    padding: 0px;
+}
+
+ul.menu
+{
+    list-style-type: none;
+}
+
+ul.menu li
+{
+    background:transparent url(../Images/puce_orange.png) no-repeat scroll 0px 0.6em;
+    text-align: left;
+    margin: 2px -5px 2px 0px;
+    padding: 0px 0px 0px 13px;
+}
+
+ul.menu li.sous-menu
+{
+    margin-left: 20px;
+}
+
+div.global
+{
+    margin: 0px 10px;
+}
+
+div.mainmenu 
+{
+    margin:auto;
+    width:320px;
+}
+
+div.mainmenu-left
+{
+    width:320px;
+    float:left;
+}
+
+div.content
+{
+    margin-left: 340px;
+}
+
+div.spacer
+{
+    clear: both;
+}

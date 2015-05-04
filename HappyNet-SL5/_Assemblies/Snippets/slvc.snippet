@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>ValueConverter: Use this when you want to perform some action or conversion on the data in a databinding.</Title>
+      <Shortcut>slvc</Shortcut>
+      <Author>Robby Ingebretsen</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>converterclass</ID>
+          <ToolTip>The name of the ValueConverter</ToolTip>
+          <Default>SomethingConverter</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+        <![CDATA[
+#region $converterclass$ (ValueConverter)
+
+public class $converterclass$ : IValueConverter
+{
+    public object Convert(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+    {
+        try
+        {
+            // Here's where you put the code do handle the value conversion.  
+            return (double)value * 2;
+        }
+        catch
+        {
+            return value;
+        }
+    }
+
+    public object ConvertBack(object value, Type targetType, object parameter, System.Globalization.CultureInfo culture)
+    {
+        // Not implemented
+        return null;
+    }
+}
+
+#endregion
+$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

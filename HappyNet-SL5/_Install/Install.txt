@@ -1,0 +1,19 @@
+[ Install ]
+
+- Install AdventureWorks for SQL Server 2008 (http://msftdbprodsamples.codeplex.com/releases/view/37109)
+- Create a SQL server account to access the database and modify the Web.config accordingly
+- Execute the *.sql from the folder "_Documentation" in order to :
+  - Add a new user (login/password = demo/demo)
+  - Add a stored procedure to retrieve the employees' list
+  
+And that's it !
+
+[	Installation ]
+
+- Installer AdventureWorks pour SQL Server 2008 (http://msftdbprodsamples.codeplex.com/releases/view/37109)
+- Penser à créer un compte SQL Server pour accéder à la base et modifier le Web.config en conséquence
+- Exécuter les *.sql du répertoire « _Documentation » afin de :
+  -	Ajouter un nouvel utilisateur (login/password = demo/demo)
+  -	Ajouter une procédure stockée pour récupérer la liste des employés
+
+Et c'est tout !

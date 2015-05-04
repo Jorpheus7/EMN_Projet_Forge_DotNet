@@ -1,0 +1,14 @@
+﻿<infra:LocalizedPage x:Class="Soat.HappyNet.Silverlight.Modules.Main.ViewPages.NotImplementedPage" 
+           xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+           xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+           xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+           xmlns:controls="clr-namespace:Soat.HappyNet.Silverlight.Library.Controls;assembly=Soat.HappyNet.Silverlight.Library"
+           xmlns:infra="clr-namespace:Soat.HappyNet.Silverlight.Infrastructure.Components;assembly=Soat.HappyNet.Silverlight.Infrastructure">
+    <controls:WindowContentControl Style="{StaticResource DefaultPageStyle}" 
+                                      Title="{Binding Strings.PAGE_NotImplemented, Source={StaticResource LocalizedStrings}}">
+        <Image Source="../Assets/Images/sheep.png" 
+               Stretch="None"
+               HorizontalAlignment="Center"
+               VerticalAlignment="Center"/>
+    </controls:WindowContentControl>
+</infra:LocalizedPage>

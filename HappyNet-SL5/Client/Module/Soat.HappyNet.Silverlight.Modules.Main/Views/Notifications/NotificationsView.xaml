@@ -1,0 +1,19 @@
+﻿<UserControl x:Class="Soat.HappyNet.Silverlight.Modules.Main.Views.NotificationsView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:windowControls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"             
+    xmlns:regions="clr-namespace:Microsoft.Practices.Composite.Presentation.Regions;assembly=Microsoft.Practices.Composite.Presentation"
+    xmlns:cal="clr-namespace:Microsoft.Practices.Composite.Presentation.Commands;assembly=Microsoft.Practices.Composite.Presentation">
+    <Grid x:Name="LayoutRoot">
+        <Grid HorizontalAlignment="Center"
+              Margin="10,0"
+              MaxHeight="80">
+            <ScrollViewer Style="{StaticResource ScrollViewerStyle}">
+                <StackPanel x:Name="NotificationsContainer" 
+                            VirtualizingStackPanel.VirtualizationMode="Recycling"
+                            VerticalAlignment="Center" />
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+</UserControl>
+    

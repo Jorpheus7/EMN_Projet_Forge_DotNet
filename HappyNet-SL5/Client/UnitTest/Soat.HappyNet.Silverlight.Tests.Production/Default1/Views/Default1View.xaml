@@ -1,0 +1,11 @@
+﻿<UserControl x:Class="Soat.HappyNet.Silverlight.Tests.Production.Default1.Views.Default1View"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+    xmlns:cal="clr-namespace:Microsoft.Practices.Composite.Presentation.Regions;assembly=Microsoft.Practices.Composite.Presentation"         
+             >
+    <Grid x:Name="LayoutRoot">
+        <TextBlock Text="{Binding Test}"/>
+    </Grid>
+</UserControl>
+    

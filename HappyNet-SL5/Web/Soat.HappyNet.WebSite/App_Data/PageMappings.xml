@@ -1,0 +1,22 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<PageMappings>
+
+	<PageMapping htmlUrl="Default.aspx"
+				 silverlightUrl="home"
+				 priority="0.5" changeFrequency="always" lastModified="2009-10-01"/>
+    <PageMapping htmlUrl="Default.aspx?page=employees"
+				 silverlightUrl="employees"
+				 priority="0.5" changeFrequency="always" lastModified="2009-10-01"/>
+    <PageMapping htmlUrl="Default.aspx?page=sales"
+                 silverlightUrl="sales"
+                 priority="0.5" changeFrequency="always" lastModified="2009-10-01"/>
+    <PageMapping htmlUrl="Products.aspx"
+                 silverlightUrl="shopping"
+                 priority="0.5" changeFrequency="always" lastModified="2009-10-01"/>
+    <PageMapping htmlUrl="Product.aspx?product={idproduct}"
+                 silverlightUrl="shopping/{idproduct}"
+                 priority="0.5" changeFrequency="always" lastModified="2009-10-01"/>
+    <PageMapping htmlUrl="Product.aspx?product={idproduct}&amp;lang={lang}"
+                 silverlightUrl="shopping/{idproduct}/{lang}"
+                 priority="0.5" changeFrequency="always" lastModified="2009-10-01"/>
+</PageMappings>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="2d804e03-5c4c-48fb-877c-c0f495181b76" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/HappyNet/Services/OrdersService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="OrdersService1.wsdl" MetadataType="Wsdl" ID="6f5417dc-ae02-4e00-aea5-a39f2a30b97f" SourceId="1" SourceUrl="http://techsi.soat.local/HappyNet/Services/OrdersService.svc?wsdl" />
+    <MetadataFile FileName="OrdersService6.xsd" MetadataType="Schema" ID="02303b9c-7233-45c5-b363-6a46a2f3b264" SourceId="1" SourceUrl="http://techsi.soat.local/HappyNet/Services/OrdersService.svc?xsd=xsd2" />
+    <MetadataFile FileName="OrdersService61.xsd" MetadataType="Schema" ID="49413564-b782-468b-9cf6-8459eaaf8a98" SourceId="1" SourceUrl="http://techsi.soat.local/HappyNet/Services/OrdersService.svc?xsd=xsd3" />
+    <MetadataFile FileName="OrdersService62.xsd" MetadataType="Schema" ID="c78a6754-a529-4247-9e5c-6c27e7cf0fd2" SourceId="1" SourceUrl="http://techsi.soat.local/HappyNet/Services/OrdersService.svc?xsd=xsd0" />
+    <MetadataFile FileName="OrdersService63.xsd" MetadataType="Schema" ID="519a1f86-b39b-4a88-b980-0e8519e85128" SourceId="1" SourceUrl="http://techsi.soat.local/HappyNet/Services/OrdersService.svc?xsd=xsd1" />
+    <MetadataFile FileName="OrdersService64.xsd" MetadataType="Schema" ID="947868c0-aa0a-4320-9454-a7d90a27acd0" SourceId="1" SourceUrl="http://techsi.soat.local/HappyNet/Services/OrdersService.svc?xsd=xsd4" />
+    <MetadataFile FileName="OrdersService65.xsd" MetadataType="Schema" ID="a9426b56-aee5-496a-96c8-9696e9f551b4" SourceId="1" SourceUrl="http://techsi.soat.local/HappyNet/Services/OrdersService.svc?xsd=xsd5" />
+    <MetadataFile FileName="OrdersService1.disco" MetadataType="Disco" ID="f69d1130-3bb7-4bd9-a8e4-98f62bad5181" SourceId="1" SourceUrl="http://techsi.soat.local/HappyNet/Services/OrdersService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>

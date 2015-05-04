@@ -1,0 +1,29 @@
+﻿<UserControl x:Class="Soat.HappyNet.Silverlight.Shell"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+    xmlns:layout="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Layout.Toolkit"
+    xmlns:controls="clr-namespace:Soat.HappyNet.Silverlight.Library.Controls;assembly=Soat.HappyNet.Silverlight.Library">
+    <controls:KonamiCodeControl>
+	<Grid>
+        <ContentControl x:Name="ShellContentControl" 
+                        Style="{StaticResource DefaultShellStyle}">
+            <navigation:Frame x:Name="MainFrame" 
+                              UriMapper="{StaticResource uriMapper}" 
+                              Source="home">
+                <navigation:Frame.Template>
+                    <ControlTemplate TargetType="navigation:Frame">
+                        <Border>
+                                <layout:TransitioningContentControl Content="{TemplateBinding Content}" 
+                                                                    HorizontalContentAlignment="Stretch" 
+                                                                    VerticalContentAlignment="Stretch"
+							                                        Transition="RetractTransition" 
+                                                                    Style="{StaticResource TransitioningContentControlStyle}"/>
+                        </Border>
+                    </ControlTemplate>
+                </navigation:Frame.Template>
+            </navigation:Frame>
+        </ContentControl>
+		</Grid>
+    </controls:KonamiCodeControl>
+</UserControl>

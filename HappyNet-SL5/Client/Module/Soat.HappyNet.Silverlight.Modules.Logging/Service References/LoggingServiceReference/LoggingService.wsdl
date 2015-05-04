@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:wsu="http://docs.oasis-open.org/wss/2004/01/oasis-200401-wss-wssecurity-utility-1.0.xsd" xmlns:wsa="http://schemas.xmlsoap.org/ws/2004/08/addressing" xmlns:wsap="http://schemas.xmlsoap.org/ws/2004/08/addressing/policy" xmlns:wsp="http://schemas.xmlsoap.org/ws/2004/09/policy" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:msc="http://schemas.microsoft.com/ws/2005/12/wsdl/contract" xmlns:tns="http://tempuri.org/" xmlns:wsaw="http://www.w3.org/2006/05/addressing/wsdl" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" xmlns:wsa10="http://www.w3.org/2005/08/addressing" xmlns:wsx="http://schemas.xmlsoap.org/ws/2004/09/mex" xmlns:wsam="http://www.w3.org/2007/05/addressing/metadata" name="LoggingService" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <xsd:schema targetNamespace="http://tempuri.org/Imports">
+      <xsd:import schemaLocation="http://techsi.soat.local/Soat.HappyNet.WebSite/Services/LoggingService.svc?xsd=xsd0" namespace="http://tempuri.org/" />
+      <xsd:import schemaLocation="http://techsi.soat.local/Soat.HappyNet.WebSite/Services/LoggingService.svc?xsd=xsd1" namespace="http://schemas.microsoft.com/2003/10/Serialization/" />
+    </xsd:schema>
+  </wsdl:types>
+  <wsdl:message name="ILoggingService_WriteMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteMessage" />
+  </wsdl:message>
+  <wsdl:message name="ILoggingService_WriteErrorMessage_InputMessage">
+    <wsdl:part name="parameters" element="tns:WriteErrorMessage" />
+  </wsdl:message>
+  <wsdl:portType name="ILoggingService">
+    <wsdl:operation name="WriteMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoggingService/WriteMessage" message="tns:ILoggingService_WriteMessage_InputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="WriteErrorMessage">
+      <wsdl:input wsaw:Action="http://tempuri.org/ILoggingService/WriteErrorMessage" message="tns:ILoggingService_WriteErrorMessage_InputMessage" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="basicHttpBindingEndPoint" type="tns:ILoggingService">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="WriteMessage">
+      <soap:operation soapAction="http://tempuri.org/ILoggingService/WriteMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+    <wsdl:operation name="WriteErrorMessage">
+      <soap:operation soapAction="http://tempuri.org/ILoggingService/WriteErrorMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="LoggingService">
+    <wsdl:port name="basicHttpBindingEndPoint" binding="tns:basicHttpBindingEndPoint">
+      <soap:address location="http://techsi.soat.local/Soat.HappyNet.WebSite/Services/LoggingService.svc" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

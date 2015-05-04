@@ -1,0 +1,123 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows"
+    xmlns:controls="clr-namespace:Soat.HappyNet.Silverlight.Library.Controls;assembly=Soat.HappyNet.Silverlight.Library"
+    xmlns:triggers="clr-namespace:Soat.HappyNet.Silverlight.Library.Behaviors.Triggers;assembly=Soat.HappyNet.Silverlight.Library"
+    xmlns:action="clr-namespace:Soat.HappyNet.Silverlight.Library.Behaviors.Actions;assembly=Soat.HappyNet.Silverlight.Library"
+    xmlns:behavior="clr-namespace:Soat.HappyNet.Silverlight.Library.Behaviors;assembly=Soat.HappyNet.Silverlight.Library"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:regions="clr-namespace:Microsoft.Practices.Composite.Presentation.Regions;assembly=Microsoft.Practices.Composite.Presentation"
+    xmlns:cal="clr-namespace:Microsoft.Practices.Composite.Presentation.Commands;assembly=Microsoft.Practices.Composite.Presentation"                
+    xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+    xmlns:dataInput="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data.Input" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Class="Soat.HappyNet.Silverlight.Modules.Main.Views.LoginStateView"
+    mc:Ignorable="d">
+    <Grid x:Name="LayoutRoot"
+          HorizontalAlignment="Right">
+
+        <Grid>
+            <Grid x:Name="LoginSite" Margin="5,0">
+                <i:Interaction.Behaviors>
+                    <behavior:BoolValueVisibilityBehavior
+                        Negate="True"
+                        ValueBinding="{Binding IsLogged}" />
+                </i:Interaction.Behaviors>
+
+                <Grid x:Name="LoginFormRegion">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition />
+                        <ColumnDefinition />
+                        <ColumnDefinition Width="Auto" />
+						<ColumnDefinition Width="Auto" />
+                    </Grid.ColumnDefinitions>
+                    <controls:WatermarkedBox x:Name="LoginBox" 
+						                     Grid.Column="0"
+						                     Watermark="{Binding Strings.APP_Username, Source={StaticResource LocalizedStrings}}" 
+	        			                     Text="{Binding UserName, Mode=TwoWay}"
+	        			                     Margin="0,0,4,0" 
+                                             TextBoxStyle="{StaticResource LoginTextBoxStyle}"
+                                             Style="{StaticResource WatermarkedBoxStyle}"
+                                             MinWidth="100"
+                                             IsEnabled="{Binding IsLoading, Converter={StaticResource NegateConverter}}">
+                        <i:Interaction.Behaviors>
+                            <behavior:WatermarkedBoxUpdateBehavior />
+                        </i:Interaction.Behaviors>
+                        <i:Interaction.Triggers>
+                            <triggers:KeyTrigger Key="Enter">
+                                <action:ExecuteCommandAction Command="{Binding LoginCommand}" />
+                            </triggers:KeyTrigger>
+                        </i:Interaction.Triggers>
+                    </controls:WatermarkedBox>
+                    <controls:WatermarkedBox x:Name="PasswordBox" 
+						                     Grid.Column="1"
+						                     Watermark="{Binding Path=Strings.APP_Password, Source={StaticResource LocalizedStrings}}" 
+	        			                     Password="{Binding Password, Mode=TwoWay}"
+	        			                     IsPasswordModeEnabled="True"
+	        			                     Margin="0,0,4,0"
+	        			                     PasswordBoxStyle="{StaticResource LoginPasswordBoxStyle}"
+                                             Style="{StaticResource WatermarkedBoxStyle}"
+	        			                     MinWidth="100"
+                                             IsEnabled="{Binding IsLoading, Converter={StaticResource NegateConverter}}">
+                        <i:Interaction.Behaviors>
+                            <behavior:WatermarkedBoxUpdateBehavior />
+                        </i:Interaction.Behaviors>
+                        <i:Interaction.Triggers>
+                            <triggers:KeyTrigger Key="Enter">
+                                <action:ExecuteCommandAction Command="{Binding LoginCommand}" />
+                            </triggers:KeyTrigger>
+                        </i:Interaction.Triggers>
+                    </controls:WatermarkedBox>
+                    <Button x:Name="LoginButton" 
+							Grid.Column="2"
+                            Content="{Binding Strings.APP_Connect, Source={StaticResource LocalizedStrings}}"
+	        			    Style="{StaticResource ButtonStyle}" HorizontalAlignment="Center"
+	        			    cal:Click.Command="{Binding LoginCommand}" 
+                            IsEnabled="{Binding LoginCommand.IsActive}" />
+                    
+                    <controls:Loading Grid.Column="2"
+                                      Width="20" Height="20"
+                                      IsLoading="{Binding IsLoading}" />
+
+        			<!--<controls:NavigationLinkButton x:Name="RegisterLink" 
+                                                   NavigateUri="register" 
+                                                   Grid.Column="3"
+                                                   Margin="5,0,0,0"
+                                                   Content="{Binding Strings.APP_Registration, Source={StaticResource LocalizedStrings}}" 
+                                                   Style="{StaticResource HyperlinkButtonStyle}" Foreground="{StaticResource HeaderForegroundBrush}"
+                                                   FontSize="9"/>-->
+				</Grid>
+            </Grid>
+            <Grid x:Name="LogoutSite">
+                <i:Interaction.Behaviors>
+                    <behavior:BoolValueVisibilityBehavior
+                        ValueBinding="{Binding IsLogged}" />
+                </i:Interaction.Behaviors>
+                
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+                <Grid x:Name="UserSite" Margin="6,2,6,2">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock
+							Text="{Binding FullName}" 
+							Style="{StaticResource HeaderLabelStyle}" />
+                        <Button x:Name="LogoutButton" 
+                                Content="{Binding Strings.APP_Disconnect, Source={StaticResource LocalizedStrings}}" 
+								VerticalAlignment="Center"
+								Style="{StaticResource ButtonLinkStyle}"
+								cal:Click.Command="{Binding LogoutCommand}" 
+                                IsEnabled="{Binding LogoutCommand.IsActive}"
+                                FontSize="9" 
+                                Margin="4,0,0,0"
+                                Foreground="{StaticResource HeaderForegroundBrush}"/>
+                    </StackPanel>
+                </Grid>
+            </Grid>
+        </Grid>
+    </Grid>
+    
+</UserControl>

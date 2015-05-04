@@ -1,0 +1,91 @@
+﻿<UserControl x:Class="Soat.HappyNet.Silverlight.Modules.BackOffice.Views.OrdersListView"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+	xmlns:data="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Data"
+    xmlns:controls="clr-namespace:Soat.HappyNet.Silverlight.Library.Controls;assembly=Soat.HappyNet.Silverlight.Library"
+    xmlns:behavior="clr-namespace:Soat.HappyNet.Silverlight.Library.Behaviors;assembly=Soat.HappyNet.Silverlight.Library"
+    xmlns:action="clr-namespace:Soat.HappyNet.Silverlight.Library.Behaviors.Actions;assembly=Soat.HappyNet.Silverlight.Library"
+    xmlns:trigger="clr-namespace:Soat.HappyNet.Silverlight.Library.Behaviors.Triggers;assembly=Soat.HappyNet.Silverlight.Library"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity">
+    <Grid x:Name="LayoutRoot" Background="White">
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="*"/>
+                <RowDefinition Height="Auto"/>
+            </Grid.RowDefinitions>
+            <Border Grid.Row="0" Margin="1">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="*"/>
+                    </Grid.RowDefinitions>
+                    
+                    <!--SelectedItem="{Binding SelectedOrder, Mode=TwoWay}"-->
+                    <!--<data:DataGrid x:Name="OrdersDataGrid" Grid.Row="0"
+                           Style="{StaticResource DataGridStyle}"
+                           ItemsSource="{Binding OrdersPagedCollection}"
+                           AutoGenerateColumns="False" IsReadOnly="True">
+                        <data:DataGrid.Columns>
+                            <data:DataGridTextColumn Header="Date" Binding="{Binding OrderDate, Converter={StaticResource DateTimeConverter}}"/>
+                            <data:DataGridTextColumn Header="Id" Binding="{Binding SalesOrderID}"/>
+                            <data:DataGridTextColumn Header="Nom du client" Binding="{Binding Customer.Person.LastName}"/>
+                            <data:DataGridTextColumn Header="Total à payer" Binding="{Binding TotalDue, Converter={StaticResource CurrencyConverter}}"/>
+                        </data:DataGrid.Columns>
+
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="SelectionChanged">
+                                <action:ExecuteCommandAction Command="{Binding SelectionChangedCommand}" Parameter="{Binding SelectedItem, ElementName=OrdersDataGrid}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </data:DataGrid>-->
+
+                    <ListBox x:Name="OrdersListBox" ItemsSource="{Binding OrdersPagedCollection}" Grid.Row="1"
+                        SelectedItem="{Binding SelectedOrder, Mode=TwoWay}" Style="{StaticResource ListBoxStyle}">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Grid.RowDefinitions>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                        <RowDefinition/>
+                                    </Grid.RowDefinitions>
+
+                                    <StackPanel Orientation="Horizontal" Grid.Row="0">
+                                        <TextBlock Text="{Binding OrderDate, Converter={StaticResource DateTimeConverter}}" Foreground="#80000000"/>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" Grid.Row="1">
+                                        <TextBlock Text="{Binding Customer.Person.FirstName}" FontWeight="Bold" Margin="0,0,0,0"/>
+                                        <TextBlock Text="{Binding Customer.Person.MiddleName}" FontWeight="Bold" Margin="2,0,0,0"/>
+                                        <TextBlock Text="{Binding Customer.Person.LastName}" FontWeight="Bold" Margin="2,0,0,0"/>
+                                    </StackPanel>
+
+                                    <StackPanel Orientation="Horizontal" Grid.Row="2">
+                                        <TextBlock Text="{Binding TotalDue, Converter={StaticResource CurrencyConverter}}" Foreground="Blue" HorizontalAlignment="Right"/>
+                                    </StackPanel>
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+
+                        <i:Interaction.Triggers>
+                            <i:EventTrigger EventName="SelectionChanged">
+                                <action:ExecuteCommandAction Command="{Binding SelectionChangedCommand}" Parameter="{Binding SelectedItem, ElementName=OrdersListBox}"/>
+                            </i:EventTrigger>
+                        </i:Interaction.Triggers>
+                    </ListBox>
+                </Grid>
+            </Border>
+
+            <data:DataPager Grid.Row="1" x:Name="OrdersDataGridPager" Source="{Binding Path=ItemsSource, ElementName=OrdersListBox}" PageSize="20"
+                            Style="{StaticResource DataPagerStyle}" DisplayMode="FirstLastPreviousNextNumeric" Padding="4" HorizontalContentAlignment="Stretch">
+                <i:Interaction.Triggers>
+                    <i:EventTrigger EventName="PageIndexChanged">
+                        <action:ExecuteCommandAction Command="{Binding PageChangedCommand}" Parameter="{Binding Path=PageIndex, ElementName=OrdersDataGridPager}"/>
+                    </i:EventTrigger>
+                </i:Interaction.Triggers>
+            </data:DataPager>
+
+            <controls:Loading IsLoading="{Binding IsLoading}"/>
+        </Grid>
+    </Grid>
+</UserControl>

@@ -1,0 +1,24 @@
+﻿<infra:LocalizedPage x:Class="Soat.HappyNet.Silverlight.Modules.BackOffice.ViewPages.OrdersPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:infra="clr-namespace:Soat.HappyNet.Silverlight.Infrastructure.Components;assembly=Soat.HappyNet.Silverlight.Infrastructure"
+	xmlns:navigation="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls.Navigation"
+	xmlns:Regions="clr-namespace:Microsoft.Practices.Composite.Presentation.Regions;assembly=Microsoft.Practices.Composite.Presentation"
+	xmlns:controls="clr-namespace:Soat.HappyNet.Silverlight.Library.Controls;assembly=Soat.HappyNet.Silverlight.Library">
+    <controls:WindowContentControl Style="{StaticResource DefaultPageStyle}" 
+                                   Title="Commandes">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="320"/>
+                <ColumnDefinition Width="20"/>
+                <ColumnDefinition Width="*"/>
+            </Grid.ColumnDefinitions>
+            <ContentControl Regions:RegionManager.RegionName="OrdersListRegion"
+                HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"
+                Grid.Column="0"/>
+            <ContentControl Regions:RegionManager.RegionName="OrderDetailsRegion"
+                HorizontalContentAlignment="Stretch" VerticalContentAlignment="Stretch"
+                Grid.Column="2"/>
+        </Grid>
+    </controls:WindowContentControl>
+</infra:LocalizedPage>

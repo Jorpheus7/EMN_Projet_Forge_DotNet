@@ -1,0 +1,33 @@
+﻿<UserControl
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation" 
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+    xmlns:action="clr-namespace:Soat.HappyNet.Silverlight.Library.Behaviors.Actions;assembly=Soat.HappyNet.Silverlight.Library"
+    xmlns:windowControls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"             
+    xmlns:regions="clr-namespace:Microsoft.Practices.Composite.Presentation.Regions;assembly=Microsoft.Practices.Composite.Presentation"
+    xmlns:cal="clr-namespace:Microsoft.Practices.Composite.Presentation.Commands;assembly=Microsoft.Practices.Composite.Presentation" xmlns:System="clr-namespace:System;assembly=mscorlib" xmlns:d="http://schemas.microsoft.com/expression/blend/2008" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" x:Class="Soat.HappyNet.Silverlight.Modules.Main.Views.LanguageSwitchView"
+    xmlns:trigger="clr-namespace:Soat.HappyNet.Silverlight.Library.Behaviors.Triggers;assembly=Soat.HappyNet.Silverlight.Library"
+    mc:Ignorable="d">
+    <Grid x:Name="LayoutRoot">
+		<ListBox Style="{StaticResource ListBoxStyle}" 
+				 ItemContainerStyle="{StaticResource ListBoxItemStyle}"
+				 ItemsSource="{Binding Languages}"
+                 Margin="0,0,0,2"
+                 SelectedItem="{Binding CurrentLanguage, Mode=TwoWay}">
+            <ListBox.ItemsPanel>
+                <ItemsPanelTemplate>
+                    <StackPanel Orientation="Horizontal"/>
+                </ItemsPanelTemplate>
+            </ListBox.ItemsPanel>
+            <ListBox.ItemTemplate>
+                <DataTemplate>
+                    <TextBlock Text="{Binding Name}">
+                        <ToolTipService.ToolTip>
+                            <ToolTip Content="{Binding Description}" />
+                        </ToolTipService.ToolTip>
+                    </TextBlock>
+                </DataTemplate>
+            </ListBox.ItemTemplate>
+		</ListBox>
+    </Grid>
+</UserControl>

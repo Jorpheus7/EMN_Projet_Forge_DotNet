@@ -1,0 +1,117 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+    xmlns:vsm="clr-namespace:System.Windows;assembly=System.Windows">
+    
+	<Color x:Key="TitleHeaderColor">#FFA1BD23</Color><!-- 97BE3D -->
+	<Color x:Key="TitleHoverHeaderColor">#FFBADB28</Color>
+
+    <Color x:Key="TopHeaderBackgroundColor">#FF606060</Color>
+    <Color x:Key="MiddleHeaderBackgroundColor">#FF454545</Color>
+    <Color x:Key="BottomHeaderBackgroundColor">#FF303030</Color>
+
+    <LinearGradientBrush x:Key="HeaderBackgroundBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="{StaticResource TopHeaderBackgroundColor}" Offset="0"/>
+        <GradientStop Color="{StaticResource BottomHeaderBackgroundColor}" Offset="1"/>
+    </LinearGradientBrush>
+    
+    <LinearGradientBrush x:Key="ApplicationBackgroundBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFE9EBD5" />
+        <GradientStop Color="#FFFFFFFF" Offset="1" />
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="BackgroundBrush" Color="#FFFFFFFF" />
+	<SolidColorBrush x:Key="ForegroundBrush" Color="#FF606060"/>
+	<SolidColorBrush x:Key="HeaderForegroundBrush" Color="#FFFFFFFF"/>
+	<SolidColorBrush x:Key="DefaultBorderBrush" Color="#FFBBBBBB"/>
+    
+    <SolidColorBrush x:Key="LineSeparatorBrush" Color="#FFBBBBBB"/>
+
+    <LinearGradientBrush x:Key="HorizontalSeparatorBrush">
+        <GradientStop Color="#00FFFFFF" />
+        <GradientStop Color="#10FFFFFF" Offset="0.2" />
+        <GradientStop Color="#30FFFFFF" Offset="0.5" />
+        <GradientStop Color="#10FFFFFF" Offset="0.8" />
+        <GradientStop Color="#00FFFFFF" Offset="1" />
+    </LinearGradientBrush>
+    
+    <LinearGradientBrush x:Key="LightHorizontalSeparatorBrush">
+        <GradientStop Color="#00000000" />
+        <GradientStop Color="#10000000" Offset="0.2" />
+        <GradientStop Color="#30000000" Offset="0.5" />
+        <GradientStop Color="#10000000" Offset="0.8" />
+        <GradientStop Color="#00000000" Offset="1" />
+    </LinearGradientBrush>
+    
+    <LinearGradientBrush x:Key="VerticalSeparatorBrush" StartPoint="0,0.5" EndPoint="1,0.5">
+        <GradientStop Color="#00FFFFFF" />
+        <GradientStop Color="#10FFFFFF" Offset="0.2" />
+        <GradientStop Color="#30FFFFFF" Offset="0.5" />
+        <GradientStop Color="#10FFFFFF" Offset="0.8" />
+        <GradientStop Color="#00FFFFFF" Offset="1" />
+    </LinearGradientBrush>
+    
+    <SolidColorBrush x:Key="NormalBrush" Color="#FF595959" />
+    <SolidColorBrush x:Key="NormalBorderBrush" Color="#FF333333" />
+    <SolidColorBrush x:Key="HoverBrush" Color="#30393939" />
+    <SolidColorBrush x:Key="GlyphBrush" Color="#FFD1D1D1" />
+
+    <LinearGradientBrush x:Key="PressedBrush" EndPoint="0.5,0.971" StartPoint="0.5,0.042">
+        <GradientStop Color="#4C000000" Offset="0" />
+        <GradientStop Color="#26FFFFFF" Offset="1" />
+        <GradientStop Color="#4C000000" Offset="0.467" />
+        <GradientStop Color="#26FFFFFF" Offset="0.479" />
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="ControlBackgroundBrush" Color="#FF333333" />
+
+    <LinearGradientBrush x:Key="SelectedBackgroundBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#33737373"/>
+        <GradientStop Color="#3F737373" Offset="1"/>
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="DisabledForegroundBrush" Color="#888" />
+    <SolidColorBrush x:Key="DisabledBackgroundBrush" Color="#FF787878" />
+    <SolidColorBrush x:Key="DisabledBorderBrush" Color="#AAA" />
+
+    <!--<SolidColorBrush x:Key="TitleHeaderBrush" Color="{StaticResource TitleHeaderColor}" />-->
+    <LinearGradientBrush x:Key="TitleHeaderBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFB6CD3F" Offset="0" />
+        <GradientStop Color="#FFA7C738" Offset="0.1" />
+        <GradientStop Color="#FF91BB3F" Offset="0.5" />
+        <GradientStop Color="{StaticResource TitleHeaderColor}" Offset="0.51" />
+        <GradientStop Color="#FF92C43F" Offset="1" />
+    </LinearGradientBrush>
+    <SolidColorBrush x:Key="TitleHoverHeaderBrush" Color="{StaticResource TitleHoverHeaderColor}" />
+    <SolidColorBrush x:Key="TransparentTitleHeaderBrush" Color="#30BADB28" />
+
+    <LinearGradientBrush x:Key="PageHeaderBackgroundBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FFB6CD3F" Offset="0" />
+        <GradientStop Color="#FFA7C738" Offset="0.1" />
+        <GradientStop Color="#FF91BB3F" Offset="0.5" />
+        <GradientStop Color="{StaticResource TitleHeaderColor}" Offset="0.51" />
+        <GradientStop Color="#FF92C43F" Offset="1" />
+    </LinearGradientBrush>
+
+    <SolidColorBrush x:Key="DiscreteBackgroundBrush" Color="#0B000000" />
+    <!--<LinearGradientBrush x:Key="DiscreteHeaderBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#00000000" />
+        <GradientStop Color="#0B000000" Offset="1"/>
+    </LinearGradientBrush>-->
+	
+	<LinearGradientBrush x:Key="DiscreteHeaderBrush" EndPoint="1.5,1.5" StartPoint="0,0" SpreadMethod="Repeat" MappingMode="Absolute">
+        <GradientStop Color="#00000000" Offset="0.484"/>
+        <GradientStop Color="#15000000" Offset="0.524"/>
+    </LinearGradientBrush>
+
+    <LinearGradientBrush x:Key="ValidBackgroundBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF0D7400" Offset="1"/>
+        <GradientStop Color="#FF32D81C"/>
+    </LinearGradientBrush>
+    <LinearGradientBrush x:Key="ErrorBackgroundBrush" EndPoint="0.5,1" StartPoint="0.5,0">
+        <GradientStop Color="#FF990606" Offset="1"/>
+        <GradientStop Color="#FFDA2F2F"/>
+    </LinearGradientBrush>
+    <RadialGradientBrush x:Key="NormalButtonBackground" Center="0.53,0.226" GradientOrigin="0.53,0.226">
+    	<GradientStop Color="#FF6D6D6D"/>
+    	<GradientStop Color="#FF484848" Offset="1"/>
+    </RadialGradientBrush>
+</ResourceDictionary>

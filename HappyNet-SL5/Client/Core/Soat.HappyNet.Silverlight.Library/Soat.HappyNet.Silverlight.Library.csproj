@@ -1,0 +1,327 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup Condition="'$(MSBuildToolsVersion)' == '3.5'">
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{1F1FAB99-FD99-4AE5-AA23-DD38FE93BE1E}</ProjectGuid>
+    <ProjectTypeGuids>{A1591282-1198-4647-A2B1-27E5FF5F6F3B};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Soat.HappyNet.Silverlight.Library</RootNamespace>
+    <AssemblyName>Soat.HappyNet.Silverlight.Library</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightApplication>false</SilverlightApplication>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Test|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Test\</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisLogFile>Bin\Debug\Soat.HappyNet.Silverlight.Library.dll.CodeAnalysisLog.xml</CodeAnalysisLogFile>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+    <CodeAnalysisRuleSetDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\\Rule Sets</CodeAnalysisRuleSetDirectories>
+    <CodeAnalysisIgnoreBuiltInRuleSets>true</CodeAnalysisIgnoreBuiltInRuleSets>
+    <CodeAnalysisRuleDirectories>;C:\Program Files\Microsoft Visual Studio 10.0\Team Tools\Static Analysis Tools\FxCop\\Rules</CodeAnalysisRuleDirectories>
+    <CodeAnalysisIgnoreBuiltInRules>true</CodeAnalysisIgnoreBuiltInRules>
+    <CodeAnalysisFailOnMissingRules>false</CodeAnalysisFailOnMissingRules>
+    <NoConfig>true</NoConfig>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Expression.Interactions, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\_Assemblies\Microsoft Blend\Microsoft.Expression.Interactions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Composite, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\_Assemblies\CompositeApplicationLibrary\Microsoft.Practices.Composite.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Practices.Composite.Presentation, Version=2.0.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\_Assemblies\CompositeApplicationLibrary\Microsoft.Practices.Composite.Presentation.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="mscorlib" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Controls, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Data.Input, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Layout.Toolkit, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\_Assemblies\Silverlight Toolkit\System.Windows.Controls.Layout.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Controls.Navigation, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Controls.Toolkit, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\_Assemblies\Silverlight Toolkit\System.Windows.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Data, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+    <Reference Include="System.Windows.Interactivity, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\..\_Assemblies\Microsoft Blend\System.Windows.Interactivity.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Windows.Browser" />
+    <Reference Include="System.Xml.Linq, Version=2.0.5.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Behaviors\Behaviors.Actions\CallDataMethod.cs" />
+    <Compile Include="Behaviors\Behaviors.Actions\SetProperty.cs" />
+    <Compile Include="Behaviors\Behaviors.Actions\TrackEventAction.cs" />
+    <Compile Include="Behaviors\Behaviors.Interactivity\BindableBehavior.cs" />
+    <Compile Include="Behaviors\Behaviors.Interactivity\BindableTargetedTriggerAction.cs" />
+    <Compile Include="Behaviors\Behaviors.Interactivity\BindableTriggerAction.cs" />
+    <Compile Include="Behaviors\Behaviors.Interactivity\BindableTriggerBase.cs" />
+    <Compile Include="Behaviors\Behaviors.Interactivity\NameResolver.cs" />
+    <Compile Include="Behaviors\Behaviors.Interactivity\TargetedTriggerBase.cs" />
+    <Compile Include="Behaviors\Behaviors.Triggers\DataEventTrigger.cs" />
+    <Compile Include="Behaviors\Behaviors.Triggers\EqualityType.cs" />
+    <Compile Include="Behaviors\Behaviors.Triggers\KeyEvent.cs" />
+    <Compile Include="Behaviors\Behaviors.Triggers\KeyTrigger.cs" />
+    <Compile Include="Behaviors\Behaviors.Triggers\MouseEventTrigger.cs" />
+    <Compile Include="Behaviors\Behaviors.Triggers\MouseWheelTrigger.cs" />
+    <Compile Include="Behaviors\Behaviors.Triggers\StateChanged.cs" />
+    <Compile Include="Behaviors\Behaviors.Triggers\PropertyChangedTrigger.cs" />
+    <Compile Include="Behaviors\Behaviors.Triggers\ValueCompareTrigger.cs" />
+    <Compile Include="Behaviors\Behaviors.Triggers\ValueMatchTrigger.cs" />
+    <Compile Include="Behaviors\Behaviors.Triggers\ValueNullTrigger.cs" />
+    <Compile Include="Behaviors\Behaviors.Triggers\ValueRegexTrigger.cs" />
+    <Compile Include="Behaviors\Behaviors.Triggers\ValueSwitchTrigger.cs" />
+    <Compile Include="Behaviors\BoolValueVisibilityBehavior.cs" />
+    <Compile Include="Behaviors\Behaviors.Actions\GoToState.cs" />
+    <Compile Include="Behaviors\ClippingBehavior.cs" />
+    <Compile Include="Behaviors\DataStateBehavior.cs" />
+    <Compile Include="Behaviors\DataStateSwitchBehavior.cs" />
+    <Compile Include="Behaviors\FluidBindProperty.cs" />
+    <Compile Include="Behaviors\HoverBehavior.cs" />
+    <Compile Include="Behaviors\TreeViewSelectionBehavior.cs" />
+    <Compile Include="Behaviors\WatermarkedBoxUpdateBehavior.cs" />
+    <Compile Include="Behaviors\Behaviors.Actions\ExecuteCommandAction.cs" />
+    <Compile Include="Behaviors\NullValueVisibilityBehavior.cs" />
+    <Compile Include="Behaviors\Behaviors.Actions\SetFocusAction.cs" />
+    <Compile Include="Behaviors\Behaviors.Actions\SetDataProperty.cs" />
+    <Compile Include="Behaviors\TextBoxUpdateBehavior.cs" />
+    <Compile Include="Commands\DelegateCommand.cs" />
+    <Compile Include="Components\Components.Bindings\AttachedBinding.cs" />
+    <Compile Include="Components\Components.Bindings\AttachedBindingExtensions.cs" />
+    <Compile Include="Components\Components.Bindings\BindableDependencyObject.cs" />
+    <Compile Include="Components\Components.Bindings\BindingInfo.cs" />
+    <Compile Include="Components\Components.CollectionView\PagedSortableCollectionView.cs" />
+    <Compile Include="Components\Components.CollectionView\RefreshEventArgs.cs" />
+    <Compile Include="Components\Components.CollectionView\SortableCollectionView.cs" />
+    <Compile Include="Components\Components.Mouse\BubblingEvent.cs" />
+    <Compile Include="Components\Components.Mouse\DoubleClickManager.cs" />
+    <Compile Include="Components\Components.Mouse\MouseWheelGenerator.cs" />
+    <Compile Include="Components\Components.Mouse\ScrollableViews.cs" />
+    <Compile Include="Components\Components.Regions\ClearChildViewsRegionBehavior.cs" />
+    <Compile Include="Components\EventDelegates.cs" />
+    <Compile Include="Components\EventDelegatesInvoker.cs" />
+    <Compile Include="Components\EventOfT.cs" />
+    <Compile Include="Components\Handler.cs" />
+    <Compile Include="Components\HandlerBase.cs" />
+    <Compile Include="Components\HandlerExtensions.cs" />
+    <Compile Include="Components\Handlers.cs" />
+    <Compile Include="Components\IObservable.cs" />
+    <Compile Include="Components\IObserver.cs" />
+    <Compile Include="Components\IWeakEventListener.cs" />
+    <Compile Include="Components\ListenerHandler.cs" />
+    <Compile Include="Components\ListenerHandlers.cs" />
+    <Compile Include="Components\ObserverHandler.cs" />
+    <Compile Include="Components\ObserverHandlers.cs" />
+    <Compile Include="Components\TypeActivator.cs" />
+    <Compile Include="Components\WeakEventListener.cs" />
+    <Compile Include="Controls\AnimatedExpander.cs" />
+    <Compile Include="Controls\AnimatorMediator.cs" />
+    <Compile Include="Controls\BalancedWrapPanel\BalancedWrapPanel.cs" />
+    <Compile Include="Controls\BalancedWrapPanel\LengthConverter.cs" />
+    <Compile Include="Controls\BalancedWrapPanel\NumericExtensions.cs" />
+    <Compile Include="Controls\BalancedWrapPanel\OrientedSize.cs" />
+    <Compile Include="Controls\BalancedWrapPanel\TypeConverters.cs" />
+    <Compile Include="Controls\EllipsisTextBlock.cs" />
+    <Compile Include="Controls\ImageLoader.cs" />
+    <Compile Include="Controls\KonamiCode\KeyListTypeConverter.cs" />
+    <Compile Include="Controls\KonamiCode\KonamiCodeControl.cs" />
+    <Compile Include="Controls\LoadingControl\BusyPointer.cs" />
+    <Compile Include="Controls\LoadingControl\Loading.xaml.cs">
+      <DependentUpon>Loading.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\Message.xaml.cs">
+      <DependentUpon>Message.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Controls\MoveableControl\MoveableContentEventArgs.cs" />
+    <Compile Include="Controls\MoveableControl\MoveableControl.cs" />
+    <Compile Include="Controls\NavigationLinkButton.cs" />
+    <Compile Include="Controls\Navigation\CleanablePage.cs" />
+    <Compile Include="Controls\ToolboxControl\ToolboxControl.cs" />
+    <Compile Include="Controls\ToolboxControl\ToolboxState.cs" />
+    <Compile Include="Controls\VisualStateHelper.cs" />
+    <Compile Include="Controls\Watermarked\PasswordBoxHelper.cs" />
+    <Compile Include="Controls\Watermarked\WatermarkedBox.cs" />
+    <Compile Include="Controls\WindowContentControl\WindowContentControl.cs" />
+    <Compile Include="Converters\ColorConverter.cs" />
+    <Compile Include="Converters\ContainsConverter.cs" />
+    <Compile Include="Converters\CountConverter.cs" />
+    <Compile Include="Converters\CurrencyConverter.cs" />
+    <Compile Include="Converters\DateTimeConverter.cs" />
+    <Compile Include="Converters\DebugConverter.cs" />
+    <Compile Include="Converters\DecimalConverter.cs" />
+    <Compile Include="Converters\DictionaryKeyValueConverter.cs" />
+    <Compile Include="Converters\EnumToBoolConverter.cs" />
+    <Compile Include="Converters\FormatConverter.cs" />
+    <Compile Include="Converters\ImageBrushConverter.cs" />
+    <Compile Include="Converters\IsEqualConverter.cs" />
+    <Compile Include="Converters\NegateConverter.cs" />
+    <Compile Include="Converters\IsMoreThanConverter.cs" />
+    <Compile Include="Converters\IsNotNullConverter.cs" />
+    <Compile Include="Converters\IsNotPositiveConverter.cs" />
+    <Compile Include="Converters\IsNullConverter.cs" />
+    <Compile Include="Converters\IsPositiveConverter.cs" />
+    <Compile Include="Converters\MailToConverter.cs" />
+    <Compile Include="Converters\MonthNameConverter.cs" />
+    <Compile Include="Converters\StringNotNullConverter.cs" />
+    <Compile Include="Converters\TextFormatConverter.cs" />
+    <Compile Include="Converters\UriConverter.cs" />
+    <Compile Include="Converters\ValueConverter.cs" />
+    <Compile Include="Converters\VisibilityConverter.cs" />
+    <Compile Include="Extensions\CommandExtensions.cs" />
+    <Compile Include="Extensions\DateTimeExtensions.cs" />
+    <Compile Include="Extensions\DependencyObjectExtensions.cs" />
+    <Compile Include="Extensions\FrameworkElementExtensions.cs" />
+    <Compile Include="Extensions\GenericsExtensions.cs" />
+    <Compile Include="Extensions\NotifyPropertyChangedExtensions.cs" />
+    <Compile Include="Extensions\NumericExtensions.cs" />
+    <Compile Include="Extensions\PrismExtensions.cs" />
+    <Compile Include="Extensions\PropertyChangedExtensions.cs" />
+    <Compile Include="Extensions\VisualStateExtensions.cs" />
+    <Compile Include="Extensions\VisualTreeExtensions.cs" />
+    <Compile Include="Extensions\XElementExtensions.cs" />
+    <Compile Include="Helpers\BindingHelper.cs" />
+    <Compile Include="Helpers\BindingListener.cs" />
+    <Compile Include="Helpers\ConverterHelper.cs" />
+    <Compile Include="Helpers\GeneralHelper.cs" />
+    <Compile Include="Extensions\Type.Extensions.cs" />
+    <Compile Include="Helpers\UIElementHelper.cs" />
+    <Compile Include="ICleanable.cs" />
+    <Compile Include="INavigationApplication.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceArgs.cs" />
+    <Compile Include="ViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Include="Controls\LoadingControl\Loading.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Controls\Message.xaml">
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Themes\Generic.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:MarkupCompilePass1</Generator>
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Components\Components.Attached\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\Silverlight\$(SilverlightVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{A1591282-1198-4647-A2B1-27E5FF5F6F3B}">
+        <SilverlightProjectProperties />
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,29 @@
+﻿<configuration>
+	<system.serviceModel>
+		<bindings>
+			<basicHttpBinding>
+				<binding name="basicHttpBindingEndPoint" maxBufferSize="2147483647"
+					maxReceivedMessageSize="2147483647">
+					<security mode="None" />
+				</binding>
+			</basicHttpBinding>
+		</bindings>
+		<client>
+			<endpoint address="http://localhost/HappyNet/Services/HumanResourcesService.svc"
+                binding="basicHttpBinding" bindingConfiguration="basicHttpBindingEndPoint"
+                contract="HumanResourcesServiceReference.IHumanResourcesService" name="HumanResourcesServiceConfiguration" />
+            <endpoint address="http://localhost/HappyNet/Services/ProductionService.svc"
+                binding="basicHttpBinding" bindingConfiguration="basicHttpBindingEndPoint"
+                contract="ProductionServiceReference.IProductionService" name="ProductionServiceConfiguration" />
+            <endpoint address="http://localhost/HappyNet/Services/LoggingService.svc"
+                binding="basicHttpBinding" bindingConfiguration="basicHttpBindingEndPoint"
+                contract="LoggingServiceReference.ILoggingService" name="LoggingServiceEndPoint" />
+            <endpoint address="http://localhost/HappyNet/Services/PersonService.svc"
+                binding="basicHttpBinding" bindingConfiguration="basicHttpBindingEndPoint"
+                contract="PersonServiceReference.IPersonService" name="PersonServiceConfiguration" />
+			<endpoint address="http://localhost/HappyNet/Services/OrdersService.svc"
+                binding="basicHttpBinding" bindingConfiguration="basicHttpBindingEndPoint"
+                contract="OrdersServiceReference.IOrdersService" name="OrdersServiceConfiguration" />
+        </client>
+	</system.serviceModel>
+</configuration>

@@ -1,0 +1,75 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
+  <CodeSnippet Format="1.0.0">
+    <Header>
+      <SnippetTypes>
+        <SnippetType>Expansion</SnippetType>
+      </SnippetTypes>
+      <Title>Create a very simple custom panel.</Title>
+      <Shortcut>slpanel</Shortcut>
+      <Author>Robby Ingebretsen</Author>
+    </Header>
+    <Snippet>
+      <Declarations>
+        <Literal Editable="true">
+          <ID>panelname</ID>
+          <ToolTip>The name of your new Panel</ToolTip>
+          <Default>SomethingPanel</Default>
+          <Function>
+          </Function>
+        </Literal>
+      </Declarations>
+      <Code Language="csharp">
+<![CDATA[#region $panelname$
+
+public class $panelname$ : Panel
+{
+    // The MeasureOverride method is your chance to ask
+    // all of your children how big they want to be
+
+    protected override Size MeasureOverride(Size availableSize)
+    { 
+        Size YouCanBeAsBigAsYouWant = new Size(double.PositiveInfinity, double.PositiveInfinity);
+
+        foreach (UIElement element in this.Children)
+        {
+            element.Measure(YouCanBeAsBigAsYouWant);
+        }
+
+        return new Size();
+    }
+
+    // The ArrangeOverride method is your chance to place
+    // and size all of your children
+
+    protected override Size ArrangeOverride(Size finalSize)
+    {
+        double top = 0;
+        double left = 0;
+        double width = 0;
+        double height = 0;
+        
+        foreach (UIElement element in this.Children)
+        {
+            // YOUR CODE HERE
+            // to change where the element get placed, just modify any of the values below.
+
+            width = element.DesiredSize.Width;
+            height = element.DesiredSize.Height;
+            
+            element.Arrange(new Rect(left, top, width, height));
+            
+            top = top + 100;
+            left = left + 100;
+        }
+
+        return finalSize;
+    }
+}
+
+#endregion
+$end$]]>
+      </Code>
+    </Snippet>
+  </CodeSnippet>
+</CodeSnippets>

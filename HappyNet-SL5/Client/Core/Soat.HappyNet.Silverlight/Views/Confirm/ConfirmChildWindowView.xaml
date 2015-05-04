@@ -1,0 +1,23 @@
+﻿<windowControls:ChildWindow
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+   xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+   x:Class="Soat.HappyNet.Silverlight.Views.ConfirmChildWindowView"
+   xmlns:cal="clr-namespace:Microsoft.Practices.Composite.Presentation.Commands;assembly=Microsoft.Practices.Composite.Presentation"
+   xmlns:Regions="clr-namespace:Microsoft.Practices.Composite.Presentation.Regions;assembly=Microsoft.Practices.Composite.Presentation"
+   xmlns:windowControls="clr-namespace:System.Windows.Controls;assembly=System.Windows.Controls"
+   Width="300" Height="190" Style="{StaticResource ChildWindowStyle}"
+   Title="{Binding MessageTitle}">
+	<Grid x:Name="LayoutRoot" Margin="0">
+		<Grid.RowDefinitions>
+			<RowDefinition />
+			<RowDefinition Height="Auto" />
+		</Grid.RowDefinitions>
+		<Border Grid.Row="0" Margin="0" Background="WhiteSmoke" HorizontalAlignment="Center" BorderThickness="1" CornerRadius="3" BorderBrush="Black" VerticalAlignment="Stretch">
+			<TextBlock Margin="7" Text="{Binding Message}" TextWrapping="Wrap" Foreground="Black" />
+		</Border>
+		<StackPanel Orientation="Horizontal" Grid.Row="1" HorizontalAlignment="Center">
+			<Button x:Name="ValidateButton" Content="{Binding ValidateButtonText}" cal:Click.Command="{Binding ValidateCommand}" Width="75" Height="23" HorizontalAlignment="Right" Margin="20,12,7,0" Foreground="White" Style="{StaticResource ButtonStyle}" />
+			<Button x:Name="CancelButton" Content="{Binding CancelButtonText}" cal:Click.Command="{Binding CancelCommand}" Width="75" Height="23" HorizontalAlignment="Right" Margin="0,12,0,0" Foreground="White" Style="{StaticResource ButtonStyle}" />
+		</StackPanel>
+	</Grid>
+</windowControls:ChildWindow>

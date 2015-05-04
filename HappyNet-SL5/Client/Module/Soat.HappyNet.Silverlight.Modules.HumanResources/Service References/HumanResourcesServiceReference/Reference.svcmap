@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e4827cd5-e2c2-43f6-ba89-4d9c81455772" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+  <ClientOptions>
+    <GenerateAsynchronousMethods>true</GenerateAsynchronousMethods>
+    <EnableDataBinding>true</EnableDataBinding>
+    <ExcludedTypes />
+    <ImportXmlTypes>false</ImportXmlTypes>
+    <GenerateInternalTypes>false</GenerateInternalTypes>
+    <GenerateMessageContracts>false</GenerateMessageContracts>
+    <NamespaceMappings />
+    <CollectionMappings>
+      <CollectionMapping TypeName="System.Collections.ObjectModel.ObservableCollection`1" Category="List" />
+    </CollectionMappings>
+    <GenerateSerializableTypes>false</GenerateSerializableTypes>
+    <Serializer>Auto</Serializer>
+    <UseSerializerForFaults>true</UseSerializerForFaults>
+    <ReferenceAllAssemblies>true</ReferenceAllAssemblies>
+    <ReferencedAssemblies />
+    <ReferencedDataContractTypes />
+    <ServiceContractMappings />
+  </ClientOptions>
+  <MetadataSources>
+    <MetadataSource Address="http://localhost/HappyNet/Services/HumanResourcesService.svc" Protocol="http" SourceId="1" />
+  </MetadataSources>
+  <Metadata>
+    <MetadataFile FileName="HumanResourcesService.xsd" MetadataType="Schema" ID="c431771b-ab34-4d35-966f-17efe4fc74b7" SourceId="1" SourceUrl="http://techsi.soat.local/HappyNet/Services/HumanResourcesService.svc?xsd=xsd1" />
+    <MetadataFile FileName="HumanResourcesService1.xsd" MetadataType="Schema" ID="9996e2af-5a58-46d7-8ee9-c0820179cff8" SourceId="1" SourceUrl="http://techsi.soat.local/HappyNet/Services/HumanResourcesService.svc?xsd=xsd0" />
+    <MetadataFile FileName="HumanResourcesService.wsdl" MetadataType="Wsdl" ID="37e66c54-cc89-4e5c-8650-e3928fec5690" SourceId="1" SourceUrl="http://techsi.soat.local/HappyNet/Services/HumanResourcesService.svc?wsdl" />
+    <MetadataFile FileName="HumanResourcesService2.xsd" MetadataType="Schema" ID="45752011-0708-4343-b0b9-46eaf2094f40" SourceId="1" SourceUrl="http://techsi.soat.local/HappyNet/Services/HumanResourcesService.svc?xsd=xsd2" />
+    <MetadataFile FileName="HumanResourcesService.disco" MetadataType="Disco" ID="67875b78-91f6-4d66-bf39-49868b9f289a" SourceId="1" SourceUrl="http://techsi.soat.local/HappyNet/Services/HumanResourcesService.svc?disco" />
+  </Metadata>
+  <Extensions>
+    <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
+    <ExtensionFile FileName="configuration.svcinfo" Name="configuration.svcinfo" />
+  </Extensions>
+</ReferenceGroup>
